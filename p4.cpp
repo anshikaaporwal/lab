@@ -1,32 +1,20 @@
 #include <iostream>
-#include <climits>
 using namespace std;
 
 int main() {
-    int arr[100], n;
-    int largest = INT_MIN;
-    int secondLargest = INT_MIN;
+    int num;
+    int *ptr;
 
-    cout << "Enter the number of elements: ";
-    cin >> n;
+    cout << "Enter an integer: ";
+    cin >> num;
 
-    cout << "Enter the elements: ";
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
+    ptr = &num;
 
-        if (arr[i] > largest) {
-            secondLargest = largest;
-            largest = arr[i];
-        }
-        else if (arr[i] > secondLargest && arr[i] != largest) {
-            secondLargest = arr[i];
-        }
-    }
+    (*ptr)++;
+    cout << "After increment = " << *ptr << endl;
 
-    if (secondLargest == INT_MIN)
-        cout << "Second-largest element does not exist.";
-    else
-        cout << "Second-largest element = " << secondLargest;
+    (*ptr)--;
+    cout << "After decrement = " << *ptr << endl;
 
     return 0;
 }

@@ -2,19 +2,19 @@
 using namespace std;
 
 int main() {
-    int arr[100], n;
+    char str[100];
+    char *ptr;
 
-    cout << "Enter the number of elements: ";
-    cin >> n;
+    cout << "Enter a string: ";
+    cin.getline(str, 100);
 
-    cout << "Enter the elements: ";
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
-    }
+    ptr = str;
 
-    cout << "Array in reverse order: ";
-    for (int i = n - 1; i >= 0; i--) {
-        cout << arr[i] << " ";
+    cout << "String is: ";
+
+    while (*ptr != '\0') {
+        cout << *ptr;
+        ptr++;
     }
 
     return 0;

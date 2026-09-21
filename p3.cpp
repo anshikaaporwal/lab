@@ -2,12 +2,16 @@
 using namespace std;
 
 int main() {
-    int arr[] = {10, 20, 30, 40, 50};
+    int num;
+    int *ptr;
 
-    int length = sizeof(arr) / sizeof(arr[0]);
+    cout << "Enter a number: ";
+    cin >> num;
 
-    cout << "Length of array = " << length;
+    ptr = &num;
+
+    cout << "Value of variable = " << num << endl;
+    cout << "Address of variable = " << ptr;
 
     return 0;
 }
-

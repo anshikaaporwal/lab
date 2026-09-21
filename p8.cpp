@@ -2,46 +2,25 @@
 using namespace std;
 
 int main() {
-    int a[100], b[100], c[200];
-    int n1, n2;
-    int i = 0, j = 0, k = 0;
+    int arr[100], n, sum = 0;
+    int *ptr;
 
-    cout << "Enter size of first array: ";
-    cin >> n1;
+    cout << "Enter the number of elements: ";
+    cin >> n;
 
-    cout << "Enter elements of first sorted array: ";
-    for (i = 0; i < n1; i++) {
-        cin >> a[i];
+    cout << "Enter the elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
     }
 
-    cout << "Enter size of second array: ";
-    cin >> n2;
+    ptr = arr;
 
-    cout << "Enter elements of second sorted array: ";
-    for (j = 0; j < n2; j++) {
-        cin >> b[j];
+    for (int i = 0; i < n; i++) {
+        sum += *ptr;
+        ptr++;
     }
 
-    i = 0;
-    j = 0;
-
-    while (i < n1 && j < n2) {
-        if (a[i] < b[j])
-            c[k++] = a[i++];
-        else
-            c[k++] = b[j++];
-    }
-
-    while (i < n1)
-        c[k++] = a[i++];
-
-    while (j < n2)
-        c[k++] = b[j++];
-
-    cout << "Merged sorted array: ";
-    for (i = 0; i < k; i++) {
-        cout << c[i] << " ";
-    }
+    cout << "Sum of array elements = " << sum;
 
     return 0;
 }
