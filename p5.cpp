@@ -1,30 +1,20 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    int n;
+int main() {
+    int arr[100], n;
 
-    cout << "Enter n: ";
+    cout << "Enter the number of elements: ";
     cin >> n;
 
-    cout << "Prime numbers between 1 and " << n << " are: ";
+    cout << "Enter the elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
 
-    for (int num = 2; num <= n; num++)
-    {
-        bool prime = true;
-
-        for (int i = 2; i < num; i++)
-        {
-            if (num % i == 0)
-            {
-                prime = false;
-                break;
-            }
-        }
-
-        if (prime)
-            cout << num << " ";
+    cout << "Array in reverse order: ";
+    for (int i = n - 1; i >= 0; i--) {
+        cout << arr[i] << " ";
     }
 
     return 0;

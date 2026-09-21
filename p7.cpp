@@ -1,36 +1,34 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
 
-int main()
-{
-    float a, b, c;
-    float D, root1, root2;
+int main() {
+    int arr[100], n;
+    int positive = 0, negative = 0;
+    int odd = 0, even = 0;
 
-    cout << "Enter a, b and c: ";
-    cin >> a >> b >> c;
+    cout << "Enter the number of elements: ";
+    cin >> n;
 
-    D = b * b - 4 * a * c;
+    cout << "Enter the elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
 
-    if (D > 0)
-    {
-        root1 = (-b + sqrt(D)) / (2 * a);
-        root2 = (-b - sqrt(D)) / (2 * a);
+        if (arr[i] > 0)
+            positive++;
 
-        cout << "Root 1 = " << root1 << endl;
-        cout << "Root 2 = " << root2 << endl;
+        if (arr[i] < 0)
+            negative++;
+
+        if (arr[i] % 2 == 0)
+            even++;
+        else
+            odd++;
     }
-    else if (D == 0)
-    {
-        root1 = -b / (2 * a);
 
-        cout << "Both roots are equal." << endl;
-        cout << "Root = " << root1;
-    }
-    else
-    {
-        cout << "Roots are complex.";
-    }
+    cout << "Positive numbers = " << positive << endl;
+    cout << "Negative numbers = " << negative << endl;
+    cout << "Even numbers = " << even << endl;
+    cout << "Odd numbers = " << odd << endl;
 
     return 0;
 }

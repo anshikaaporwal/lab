@@ -1,16 +1,13 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    float a, b, c, d, e, f, g;
+int main() {
+    int arr[] = {10, 20, 30, 40, 50};
 
-    cout << "Enter values of a, b, c, d, e, f, g: ";
-    cin >> a >> b >> c >> d >> e >> f >> g;
+    int length = sizeof(arr) / sizeof(arr[0]);
 
-    float result = (a + b / c * d - e) * (f - g);
-
-    cout << "Result = " << result;
+    cout << "Length of array = " << length;
 
     return 0;
 }
+
